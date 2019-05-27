@@ -15,32 +15,26 @@
           <option value="Wedensday">Wedensday </option>
           <option value="Thursday">Thursday </option>
           <option value="Friday">Friday </option>
-          <option value="Saturday">Saturday </option>
-        </select>
+          <option value="Saturday">Saturday </option> </select
+        ><br />
         <label htmlFor="selectStartHour">Select start hour:</label>
         <input
           className="form-control"
           id="selectStartHour"
           placeholder="from"
-          <!--
           name="startHour"
-          --
-        />
+        /><br />
         <!-- onChange="{this.change.bind(this)}"
           value="{this.state.startHour}"  -->
-        />
         <label htmlFor="selectEndHour">Select end hour:</label>
         <input
           id="selectEndHour"
           className="form-control"
           placeholder="to"
-          <!--
           name="endHour"
-          --
-        />
+        /><br />
         <!-- onChange="{this.change.bind(this)}"
           value="{this.state.endHour}" -->
-        />
         <button id="addBtn" onClick="{this.addSchedule.bind(this)}">
           Add
         </button>
@@ -48,7 +42,7 @@
     </div>
     <div className="col-sm-6">
       <label
-        >this message apears when the add btn is clicked and says (Check your
+        >this message apears when the add btn is clicked and says: Check your
         Time!)
       </label>
       <!-- here I must show and hide // section <sec> starts here -->
@@ -64,22 +58,22 @@
             </tr>
           </thead>
           <tbody>
-            {this.props.schedules.map((sch, index) => { return (
+            <!-- //// {this.props.schedules.map((sch, index) => { return ( //// the ng-repeat function goes here! -->
             <tr key="{sch.day}">
-              <td>{sch.day}</td>
-              <td>{sch.startHour}</td>
-              <td>{sch.endHour}</td>
+              <td>Wedensday</td>
+              <td>12:30pm</td>
+              <td>2pm</td>
               <td>
                 <button
                   className="btn btn-primary"
                   value="{sch.day}"
-                  onClick="{this.removeSchedule.bind(this)}"
+                  a="when clicked removes that schedual entry"
                 >
                   remove
                 </button>
               </td>
             </tr>
-            ); })}
+            <!-- ); })}     the end of the repeated part here!   -->
           </tbody>
         </table>
       </div>
