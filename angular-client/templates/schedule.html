@@ -3,12 +3,8 @@
     <div className="col-sm-6">
       <form className="select form-group">
         <label htmlFor="selectDate">Select day:</label>
-        <select
-          className="form-control"
-          id="selectDate"
-          name="day"
-          onChange="{this.change.bind(this)}"
-        >
+        <select className="form-control" id="selectDate" name="day">
+          <!-- onChange="{this.change.bind(this)}" -->
           <option value="Sunday"> Sunday</option>
           <option value="Monday"> Monday</option>
           <option value="Tuesday"> Tuesday</option>
@@ -42,10 +38,10 @@
     </div>
     <div className="col-sm-6">
       <label
-        >this message apears when the add btn is clicked and says: Check your
-        Time!)
+        >display error message when the time input feilds are empty
+        {this.state.message}
       </label>
-      <!-- here I must show and hide // section <sec> starts here -->
+      <!-- here I must show new schedule when the add button is clicked // section <sec> starts here -->
       <div>
         <h3>Schedule</h3>
         <table className="table table-hover table-dark">
