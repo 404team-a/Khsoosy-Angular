@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const { db } = require("./database/db");
 const Sequelize = require("sequelize");
 const bcrypt = require("bcrypt");
@@ -13,6 +14,17 @@ const {
   Subject
 } = require("./database/model");
 var jwt = require("jsonwebtoken");
+=======
+const { db } = require('./database/db');
+const Sequelize = require('sequelize');
+const bcrypt = require('bcrypt');
+const SECRET_KEY = 'any string';
+const ejs = require('ejs');
+const Nexmo = require('nexmo');
+const socketio = require('socket.io');
+const { User, Schedule, Rating, Confirm, Subject } = require('./database/model');
+var jwt = require('jsonwebtoken');
+>>>>>>> 04b8f9468a435843d87c366f6cb6511a52a08cd3
 const nexmo = new Nexmo(
   {
     apiKey: "b84db079",
@@ -279,6 +291,7 @@ exports.conform = (req, res) => {
 };
 
 exports.conformAnswer = (req, res) => {
+<<<<<<< HEAD
   let query = req.query;
   // console.log(query, 'gfhgfh');
   Confirm.update(
@@ -307,4 +320,36 @@ exports.conformAnswer = (req, res) => {
     .catch(function(err) {
       req.server.log(["error"], err.stack);
     });
+=======
+	let query = req.query;
+	// console.log(query, 'gfhgfh');
+	Confirm.update(
+		{ confirmed: query.confirmed },
+		{
+			where: {
+				id: query.id
+			}
+		}
+	)
+		.then((result) => {
+			const id = req.query.teacherId;
+			db
+				.query(
+					`select TeacherConfirms.id, users.name, TeacherConfirms.start, TeacherConfirms.end, TeacherConfirms.day, TeacherConfirms.confirmed from TeacherConfirms  JOIN users on TeacherConfirms.studentId = users.id and   TeacherConfirms.teacherId = ${id} `
+				)
+				.then(([ result, metadata ]) => {
+					var message = 'the teacher accebt your requset';
+					if (query.confirmed === 'No') {
+						message = "the teacher didn't accept your requset";
+					}
+					nexmo.message.sendSms('khsoosi', '00962786916479', message, {
+						type: 'unicode'
+					});
+					return res.send(result);
+				});
+		})
+		.catch(function(err) {
+			req.server.log([ 'error' ], err.stack);
+		});
+>>>>>>> 04b8f9468a435843d87c366f6cb6511a52a08cd3
 };

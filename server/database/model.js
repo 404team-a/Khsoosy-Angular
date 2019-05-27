@@ -35,18 +35,6 @@ const Subject = db.define('subject', {
 	}
 });
 
-const Role = db.define('role', {
-	id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
-	role: { type: Sequelize.STRING, required: true },
-	createdAt: {
-		type: Sequelize.DATE,
-		defaultValue: Sequelize.NOW
-	},
-	updatedAt: {
-		type: Sequelize.DATE,
-		defaultValue: Sequelize.NOW
-	}
-});
 
 const Rating = db.define('rating', {
 	id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
@@ -81,48 +69,12 @@ const Confirm = db.define('TeacherConfirm', {
 	}
 });
 
-const Permission = db.define('permission', {
-	id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
-	name: { type: Sequelize.STRING, required: true },
-	createdAt: {
-		type: Sequelize.DATE,
-		defaultValue: Sequelize.NOW
-	},
-	updatedAt: {
-		type: Sequelize.DATE,
-		defaultValue: Sequelize.NOW
-	}
-});
 
 const Schedule = db.define('schedule', {
 	id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
 	day: { type: Sequelize.STRING, required: true },
 	startHour: { type: Sequelize.STRING, required: true },
 	endHour: { type: Sequelize.STRING, required: true },
-	createdAt: {
-		type: Sequelize.DATE,
-		defaultValue: Sequelize.NOW
-	},
-	updatedAt: {
-		type: Sequelize.DATE,
-		defaultValue: Sequelize.NOW
-	}
-});
-
-const PermissionRole = db.define('PermissionRole', {
-	id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
-	createdAt: {
-		type: Sequelize.DATE,
-		defaultValue: Sequelize.NOW
-	},
-	updatedAt: {
-		type: Sequelize.DATE,
-		defaultValue: Sequelize.NOW
-	}
-});
-
-const UserRole = db.define('UserRole', {
-	id: { type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true },
 	createdAt: {
 		type: Sequelize.DATE,
 		defaultValue: Sequelize.NOW
@@ -145,11 +97,8 @@ const TeacherSubject = db.define('TeacherSubject', {
 	}
 });
 
-Role.belongsToMany(Permission, { through: 'PermissionRole' });
-Permission.belongsToMany(Role, { through: 'PermissionRole' });
 
-Role.belongsToMany(User, { through: 'UserRole' });
-User.belongsToMany(Role, { through: 'UserRole' });
+
 
 Subject.belongsToMany(User, { through: 'TeacherSubject' });
 User.belongsToMany(Subject, { through: 'TeacherSubject' });
@@ -162,11 +111,7 @@ Schedule.belongsTo(User);
 
 module.exports.User = User;
 module.exports.Schedule = Schedule;
-module.exports.Role = Role;
-module.exports.Permission = Permission;
 module.exports.Subject = Subject;
 module.exports.Rating = Rating;
-module.exports.PermissionRole = PermissionRole;
-module.exports.UserRole = UserRole;
 module.exports.TeacherSubject = TeacherSubject;
 module.exports.Confirm = Confirm;
