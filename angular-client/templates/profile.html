@@ -48,9 +48,7 @@
             className="form-control"
             type="text"
             placeholder="summary"
-            value={this.state.summary}
-            onChange={(event) => this.change(event)}
-            name="summary"
+            ng-model="summary"
         />
         <label>Upload your image:</label>
         <ImageUpload changeImg={this.changeImg.bind(this)} imgUrl={this.state.imgUrl} />
