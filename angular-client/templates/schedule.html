@@ -22,18 +22,24 @@
           className="form-control"
           id="selectStartHour"
           placeholder="from"
+          <!--
           name="startHour"
-          onChange="{this.change.bind(this)}"
-          value="{this.state.startHour}"
+          --
+        />
+        <!-- onChange="{this.change.bind(this)}"
+          value="{this.state.startHour}"  -->
         />
         <label htmlFor="selectEndHour">Select end hour:</label>
         <input
           id="selectEndHour"
           className="form-control"
           placeholder="to"
+          <!--
           name="endHour"
-          onChange="{this.change.bind(this)}"
-          value="{this.state.endHour}"
+          --
+        />
+        <!-- onChange="{this.change.bind(this)}"
+          value="{this.state.endHour}" -->
         />
         <button id="addBtn" onClick="{this.addSchedule.bind(this)}">
           Add
@@ -41,8 +47,11 @@
       </form>
     </div>
     <div className="col-sm-6">
-      <label>{this.state.message}</label>
-      {this.props.schedules.length > 0 ? (
+      <label
+        >this message apears when the add btn is clicked and says (Check your
+        Time!)
+      </label>
+      <!-- here I must show and hide // section <sec> starts here -->
       <div>
         <h3>Schedule</h3>
         <table className="table table-hover table-dark">
@@ -74,7 +83,7 @@
           </tbody>
         </table>
       </div>
-      ) : null}
+      <!-- the section ends here </sec>-->
     </div>
   </div>
 </div>
