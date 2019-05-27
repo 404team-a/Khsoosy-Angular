@@ -1,0 +1,67 @@
+<div>
+    <span className="form-group">
+        <label>User Name:</label>
+        <input
+            className="form-control"
+            type="text"
+            placeholder="user name"
+            ng-model="username"
+        />
+        <label>Email:</label>
+        <input
+            readOnly
+            className="form-control"
+            type="text"
+            placeholder="email"
+            ng-model="email"
+        />
+        <label>Phone Number:</label>
+        <input
+            className="form-control"
+            type="text"
+            placeholder="phone"
+            ng-model="phone"
+        />
+        <label>Location:</label>
+        <input
+            className="form-control"
+            type="text"
+            placeholder="location"
+            ng-model="location"
+        />
+        <label>Subject Level:</label>
+        <input
+            className="form-control"
+            type="text"
+            placeholder="subjectLevel"
+            ng-model="subjectLevel"
+        />
+        <label>Subject Name:</label>
+        <input
+            className="form-control"
+            type="text"
+            placeholder="subjectName"
+            ng-model="subjectName"
+        />
+        <label>Summary:</label>
+        <input
+            className="form-control"
+            type="text"
+            placeholder="summary"
+            value={this.state.summary}
+            onChange={(event) => this.change(event)}
+            name="summary"
+        />
+        <label>Upload your image:</label>
+        <ImageUpload changeImg={this.changeImg.bind(this)} imgUrl={this.state.imgUrl} />
+
+        <label>Upload your CV:</label>
+        <CVUpload changeCV={this.changeCV.bind(this)} />
+        <Schedule changeSchedules={this.changeSchedules.bind(this)} schedules={this.state.schedules} />
+        <Confirm current_teacherId={this.props.current_teacherId} />
+        <button className="updateBtn" onClick={this.updateInfo.bind(this)}>
+            Update
+        </button>
+        <label>{this.state.updatedMsg}</label>
+    </span>
+</div>
