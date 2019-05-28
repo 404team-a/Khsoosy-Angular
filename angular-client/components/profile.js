@@ -37,16 +37,41 @@ angular.module('app')
 			.catch((err) => console.log(err));
     }
     this.updateInfo = () => {
+        const body = {
+			userName:$scope.userName ,
+			cvFileUrl: $scope.cvFileUrl,
+			imgUrl: $scope.imgUrl,
+			summary: $scope.summary,
+			email:$scope.email,
+			phone: $scope.phone,
+			location: $scope.location,
+			current_teacherId:$ctrl.current_teacherId ,
+			schedules: $scope.schedules,
+			subjectName: $scope.subjectName ,
+			subjectLevel: $scope.subjectLevel
+		};
+		$http('/updateTeacherProfile', {
+			method: 'put',
+			body: JSON.stringify(body),
+			headers: { 'Content-Type': 'application/json' }
+		})
+			.then((response) => {
+				return response.json();
+			})
+			.then((resp) => {
+				this.showTeacherInfo($ctrl.current_teacherId);
+				$ctrl.updatedMsg = "Updated !";
+			});  
 
     }
     this.changeCV = (cvFileUrl) => {
-
+        $scope.cvFileUrl = cvFileUrl
     }
     this.changeImg = (imgUrl) => {
-
+        $scope.imgUrl = imgUrl
     }
     this.changeSchedules = (schedules) => {
-
+        $scope.schedules = schedules
     }
 
  })
