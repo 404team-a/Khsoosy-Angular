@@ -1,0 +1,84 @@
+<form className="sign" ng-controller="signUpController">
+    <div className="form-group" >
+        <h2>SignUp</h2>
+        <div className="form-check">
+            <input
+                className="form-check-input"
+                type="radio"
+                name="is_teacher"
+                id="student"
+                value="false"
+                onChange={this.change.bind(this)}
+            />
+            <label className="form-check-label" htmlFor="student">
+                student
+            </label>
+            <input
+                className="form-check-input"
+                type="radio"
+                name="is_teacher"
+                id="teacher"
+                value="true"
+                onChange={this.change.bind(this)}
+            />
+            <label id="Tlabel" className="form-check-label" htmlFor="taecher">
+                teacher
+            </label>
+        </div>
+        <input
+            className="form-control"
+            type="text"
+            name="userName"
+            value={this.state.userName}
+            placeholder="your name"
+            onChange={this.change.bind(this)}
+        />
+        <input
+            className="form-control"
+            type="text"
+            value={this.state.email}
+            name="email"
+            placeholder="example@gmaill.com"
+            onChange={this.change.bind(this)}
+        />
+        <input
+            type="password"
+            name="password"
+            value={this.state.password}
+            placeholder="*****"
+            onChange={this.change.bind(this)}
+            className="form-control"
+        />
+        <input
+            type="text"
+            name="phone"
+            value={this.state.phone}
+            placeholder="7777788888"
+            onChange={this.change.bind(this)}
+            className="form-control"
+        />
+        <input
+            type="text"
+            name="location"
+            value={this.state.location}
+            placeholder="Amman"
+            onChange={this.change.bind(this)}
+            className="form-control"
+        />
+    </div>
+    <input className="btn btn-primary" type="button" value="SignUp" onClick={this.onSignUp.bind(this)} />
+    <label id="error">{this.state.error}</label>
+    <br />
+    <label className="form-check-label" htmlFor="login">
+        Already have an account?
+        <a
+            id="signin"
+            onClick={() => {
+                this.props.closeModal('SignUp');
+                this.props.openModal('Login');
+            }}
+        >
+            Login
+        </a>
+    </label>
+</form>
