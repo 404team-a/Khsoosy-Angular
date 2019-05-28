@@ -1,4 +1,4 @@
-<div>
+<div ng-controller="fnSchedule">
   <div className="row">
     <div className="col-sm-6">
       <form className="select form-group">
@@ -13,7 +13,7 @@
           <option value="Friday">Friday </option>
           <option value="Saturday">Saturday </option> </select
         ><br />
-        <label htmlFor="selectStartHour">Select start hour:</label>
+        <label htmlFor="selectStartHour">Select start hour: </label>
         <input
           className="form-control"
           id="selectStartHour"
@@ -22,7 +22,7 @@
         /><br />
         <!-- onChange="{this.change.bind(this)}"
           value="{this.state.startHour}"  -->
-        <label htmlFor="selectEndHour">Select end hour:</label>
+        <label htmlFor="selectEndHour">Select end hour: </label>
         <input
           id="selectEndHour"
           className="form-control"
@@ -53,7 +53,7 @@
               <th scope="col">Cancel</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody ng-show="false">
             <!-- //// {this.props.schedules.map((sch, index) => { return ( //// the ng-repeat function goes here! -->
             <tr key="{sch.day}">
               <td>Wedensday</td>
@@ -63,13 +63,13 @@
                 <button
                   className="btn btn-primary"
                   value="{sch.day}"
-                  a="when clicked removes that schedual entry"
+                  a="when clicked removes that schedual entry from the array of schedules"
                 >
                   remove
                 </button>
               </td>
             </tr>
-            <!-- ); })}     the end of the repeated part here!   -->
+            <!-- ); })}  the end of the repeated part here!   -->
           </tbody>
         </table>
       </div>
