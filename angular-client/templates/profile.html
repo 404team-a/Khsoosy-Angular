@@ -51,16 +51,16 @@
             ng-model="summary"
         />
         <label>Upload your image:</label>
-        <ImageUpload changeImg="$ctrl.changeImg" imgUrl=imgUrl />
+        <ImageUpload changeImg="$ctrl.changeImg" ng-model="imgUrl" />
 
         <label>Upload your CV:</label>
         <CVUpload changeCV="$ctrl.changeCV"/>
-        <Schedule changeSchedules="$ctrl.changeSchedules" schedules={this.state.schedules} />
+        <Schedule changeSchedules="$ctrl.changeSchedules" schedules="$ctrl.schedules" />
         <Confirm current_teacherId="$ctrl.current_teacherId" />
         <button className="updateBtn" ng-click="$ctrl.updateInfo()">
             Update
         </button>
-        
-        <label>{this.state.updatedMsg}</label>
+
+        <label>{{$ctrl.updatedMsg}}</label>
     </span>
 </div>
