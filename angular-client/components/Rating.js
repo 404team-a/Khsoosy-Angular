@@ -21,7 +21,13 @@ angular.module('app')
             
 		}).catch(function(){
 			console.log('big error')
-		})
+    })
+    
+    setTimeout(() => {
+      $scope.ratingText='';
+      $scope.rate='';
+      $scope.rateMessage=''
+    }, 3000);
   }
 
 }])
