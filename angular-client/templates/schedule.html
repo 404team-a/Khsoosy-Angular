@@ -1,10 +1,24 @@
+<div ng-app="app" ng-controller="ScheduleController">
+  <form ng-submit="add()">
+    <input ng-model="startHour" />
+    <button>Add</button>
+  </form>
+  <ul>
+    <div ng-repeat="t in schedules">
+      {{ t }}
+      <button ng-click="delete()">x</button>
+    </div>
+  </ul>
+</div>
+
+<!-- 
 <div ng-controller="fnSchedule">
   <div className="row">
     <div className="col-sm-6">
       <form className="select form-group">
         <label htmlFor="selectDate">Select day:</label>
         <select className="form-control" id="selectDate" name="day">
-          <!-- onChange="{this.change.bind(this)}" -->
+          onChange="{this.change.bind(this)}"
           <option value="Sunday"> Sunday</option>
           <option value="Monday"> Monday</option>
           <option value="Tuesday"> Tuesday</option>
@@ -20,8 +34,8 @@
           placeholder="from"
           name="startHour"
         /><br />
-        <!-- onChange="{this.change.bind(this)}"
-          value="{this.state.startHour}"  -->
+        onChange="{this.change.bind(this)}"
+          value="{this.state.startHour}" 
         <label htmlFor="selectEndHour">Select end hour: </label>
         <input
           id="selectEndHour"
@@ -29,8 +43,8 @@
           placeholder="to"
           name="endHour"
         /><br />
-        <!-- onChange="{this.change.bind(this)}"
-          value="{this.state.endHour}" -->
+        onChange="{this.change.bind(this)}"
+          value="{this.state.endHour}"
         <button id="addBtn" onClick="{this.addSchedule.bind(this)}">
           Add
         </button>
@@ -41,7 +55,7 @@
         >display error message when the time input feilds are empty
         {this.state.message}
       </label>
-      <!-- here I must show new schedule when the add button is clicked // section <sec> starts here -->
+      here I must show new schedule when the add button is clicked // section starts here
       <div>
         <h3>Schedule</h3>
         <table className="table table-hover table-dark">
@@ -54,7 +68,7 @@
             </tr>
           </thead>
           <tbody ng-show="false">
-            <!-- //// {this.props.schedules.map((sch, index) => { return ( //// the ng-repeat function goes here! -->
+            //// {this.props.schedules.map((sch, index) => { return ( //// the ng-repeat function goes here!
             <tr key="{sch.day}">
               <td>Wedensday</td>
               <td>12:30pm</td>
@@ -69,11 +83,11 @@
                 </button>
               </td>
             </tr>
-            <!-- ); })}  the end of the repeated part here!   -->
+            ); })}  the end of the repeated part here!  
           </tbody>
         </table>
       </div>
-      <!-- the section ends here </sec>-->
+      the section ends here 
     </div>
   </div>
-</div>
+</div> -->
