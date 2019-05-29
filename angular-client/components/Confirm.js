@@ -1,6 +1,7 @@
 angular.module('app')
-.controller('rateController'['$scope',function($scope,$http){
+.controller('ConfirmController'['$scope',function($scope,$http){
   $scope.books=[];
+  $scope.is_disabled=true;
   $scope.componentDidMount=function(){
     $scope.confirm();
   }
@@ -36,3 +37,13 @@ angular.module('app')
   }
   ///////////////////////////////
 }])
+
+.component('Confirm',{
+  bindings: {
+      closeModal:'<',
+      openModal:'<'
+    },
+    controller: 'ConfirmController',
+    templateUrl: '/templates/Confirm.html'
+
+})
