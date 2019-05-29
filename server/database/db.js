@@ -2,7 +2,7 @@
 const Sequelize = require("sequelize");
 
 //Database connection
-const db = new Sequelize('sql2292264', 'sql2292264', 'wS4*zG6%', {
+const db = new Sequelize('sql12293151', 'sql12293151', 'K9RaFkAPbr', {
     host: 'sql2.freesqldatabase.com',
     dialect: 'mysql',
 })
