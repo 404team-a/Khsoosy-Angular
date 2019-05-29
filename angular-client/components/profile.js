@@ -1,15 +1,15 @@
 angular.module('app')
  .controller('ProfileCtrl',function($scope,$http){
     $scope.cv=''
-    this.updatedMsg = "thanks a lote "
+   $scope.updatedMsg = "thanks a lote "
 
    
-    this.componentDidMount = () => {
-        const id = this.current_teacherId;
-        this.current_teacherId = id
-        this.showTeacherInfo(id)
+    $scope.componentDidMount = () => {
+        const id = $scope.current_teacherId;
+        $scope.current_teacherId = id
+        $scope.showTeacherInfo(id)
     }
-    this.showTeacherInfo = (id) => {
+    $scope.showTeacherInfo = (id) => {
         return $http(`/teacherProfile/${id}`, {
 			method: 'GET',
 			headers: {
@@ -36,7 +36,7 @@ angular.module('app')
 			})
 			.catch((err) => console.log(err));
     }
-    this.updateInfo = () => {
+    $scope.updateInfo = () => {
         const body = {
 			userName:$scope.userName ,
 			cvFileUrl: $scope.cvFileUrl,
@@ -64,13 +64,13 @@ angular.module('app')
 			});  
 
     }
-    this.changeCV = (cvFileUrl) => {
+    $scope.changeCV = (cvFileUrl) => {
         $scope.cvFileUrl = cvFileUrl
     }
-    this.changeImg = (imgUrl) => {
+    $scope.changeImg = (imgUrl) => {
         $scope.imgUrl = imgUrl
     }
-    this.changeSchedules = (schedules) => {
+    $scope.changeSchedules = (schedules) => {
         $scope.schedules = schedules
     }
 
