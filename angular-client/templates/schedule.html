@@ -1,93 +1,53 @@
-<div ng-app="app" ng-controller="ScheduleController">
-  <form ng-submit="add()">
-    <input ng-model="startHour" />
-    <button>Add</button>
-  </form>
-  <ul>
-    <div ng-repeat="col in schedules">
-      {{ col }}
-      <button ng-click="delete()">x</button>
-    </div>
-  </ul>
-</div>
-
-<!-- 
-<div ng-controller="fnSchedule">
-  <div className="row">
-    <div className="col-sm-6">
-      <form className="select form-group">
+<div ng-controller="ScheduleController">
+  <div class="row" >
+    <div class="col-sm-6">
+      <form class="select form-group" ng-submit="add(); showHide()">
         <label htmlFor="selectDate">Select day:</label>
-        <select className="form-control" id="selectDate" name="day">
-          onChange="{this.change.bind(this)}"
-          <option value="Sunday"> Sunday</option>
-          <option value="Monday"> Monday</option>
-          <option value="Tuesday"> Tuesday</option>
-          <option value="Wedensday">Wedensday </option>
-          <option value="Thursday">Thursday </option>
-          <option value="Friday">Friday </option>
-          <option value="Saturday">Saturday </option> </select
-        ><br />
-        <label htmlFor="selectStartHour">Select start hour: </label>
-        <input
-          className="form-control"
-          id="selectStartHour"
-          placeholder="from"
-          name="startHour"
-        /><br />
-        onChange="{this.change.bind(this)}"
-          value="{this.state.startHour}" 
-        <label htmlFor="selectEndHour">Select end hour: </label>
-        <input
-          id="selectEndHour"
-          className="form-control"
-          placeholder="to"
-          name="endHour"
-        /><br />
-        onChange="{this.change.bind(this)}"
-          value="{this.state.endHour}"
-        <button id="addBtn" onClick="{this.addSchedule.bind(this)}">
-          Add
-        </button>
+        <select
+          ng-model="rowArr[0]"
+          class="form-control"
+          id="selectDate"
+          name="day"
+        >
+          <option value="Sunday">Sunday</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wedensday">Wedensday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+        </select>
+        <label htmlFor="selectStartHour">Select start hour:</label>
+        <input ng-model="rowArr[1]" />
+        <label htmlFor="selectEndHour">Select end hour:</label>
+        <input ng-model="rowArr[2]" />
+        <button id="addBtn">Add</button>
       </form>
     </div>
-    <div className="col-sm-6">
-      <label
-        >display error message when the time input feilds are empty
-        {this.state.message}
-      </label>
-      here I must show new schedule when the add button is clicked // section starts here
-      <div>
-        <h3>Schedule</h3>
-        <table className="table table-hover table-dark">
-          <thead>
-            <tr>
-              <th scope="col">Day</th>
-              <th scope="col">Start</th>
-              <th scope="col">End</th>
-              <th scope="col">Cancel</th>
-            </tr>
-          </thead>
-          <tbody ng-show="false">
-            //// {this.props.schedules.map((sch, index) => { return ( //// the ng-repeat function goes here!
-            <tr key="{sch.day}">
-              <td>Wedensday</td>
-              <td>12:30pm</td>
-              <td>2pm</td>
-              <td>
-                <button
-                  className="btn btn-primary"
-                  value="{sch.day}"
-                  a="when clicked removes that schedual entry from the array of schedules"
-                >
-                  remove
-                </button>
-              </td>
-            </tr>
-            ); })}  the end of the repeated part here!  
-          </tbody>
-        </table>
+    <div class="col-sm-6">
+        <div>
+          <span ng-show="isVisible">
+            <h3>Schedule</h3>
+            <table className="table table-hover table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Day</th>
+                  <th scope="col">Start</th>
+                  <th scope="col">End</th>
+                  <th scope="col">Cancel</th>
+                </tr>
+              </thead>
+              <tbody>
+                </span>
+              <tr ng-repeat="ele in schedules">
+                <td>{{ele[0]}}</td>
+                <td>{{ele[1]}}</td>
+                <td>{{ele[2]}}</td>
+                <td>
+                  <button ng-click="delete(); hide()">remove</button>
+                </td>                
+          </tr>
       </div>
-      the section ends here 
     </div>
   </div>
-</div> -->
+</div>
