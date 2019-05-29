@@ -70,7 +70,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-// angular.module('app', []);
+angular.module('app', []);
 alert('heeeeeeeeey')
 
 
