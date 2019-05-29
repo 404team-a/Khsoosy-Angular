@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const db = require('./database/db');
+const db = require('../database-mysql/db');
 const app = express();
 const khsoosiRouter = require('./router');
 

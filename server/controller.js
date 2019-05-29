@@ -1,11 +1,11 @@
-const { db } = require('./database/db');
+const { db } = require('../database-mysql/db');
 const Sequelize = require('sequelize');
 const bcrypt = require('bcrypt');
 const SECRET_KEY = 'any string';
 const ejs = require('ejs');
 const Nexmo = require('nexmo');
 const socketio = require('socket.io');
-const { User, Schedule, Rating, Confirm, Subject } = require('./database/model');
+const { User, Schedule, Rating, Confirm, Subject } = require('../database-mysql/model');
 var jwt = require('jsonwebtoken');
 const nexmo = new Nexmo(
 	{
@@ -65,9 +65,9 @@ exports.updateTeacherProfile = (req, res) => {
 			}
 		})
 		.then(function(data) {
-			res.status(200).json({ result: 'The information was successfully updated' });
+			res.json({ result: 'The information was successfully updated' });
 		})
-		.catch((err) => res.status(500).json({ error: 'Server Error' }));
+		.catch((err) => res.send("hi"))//res.status(500).json({ error: 'Server Error' }));
 };
 
 exports.showTeacherInfo = (req, res) => {

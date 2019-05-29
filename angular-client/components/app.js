@@ -6,6 +6,6 @@ angular.module('app')
 })
 .component('app', {
   bindings: {},
-  controller: 'AppCtrl',
+  // controller: 'AppCtrl',
   templateUrl: '/templates/app.html'
 });
