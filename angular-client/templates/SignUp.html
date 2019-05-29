@@ -1,0 +1,71 @@
+<form class="sign" ng-controller="signUpController">
+    <div class="form-group" >
+        <h2>SignUp</h2>
+        <div class="form-check">
+            <input
+                class="form-check-input"
+                type="radio"
+                id="student"
+                ng-model="is_teacher"
+                value="false"
+            />
+            <label class="form-check-label" htmlFor="student">
+                student
+            </label>
+            <input
+                class="form-check-input"
+                type="radio"
+                id="teacher"
+                ng-model="is_teacher"
+                value="true"
+            />
+            <label id="Tlabel" class="form-check-label" htmlFor="taecher">
+                teacher
+            </label>
+        </div>
+        <input
+            class="form-control"
+            type="text"
+            placeholder="your name"
+            ng-model="userName"
+        />
+        <input
+            class="form-control"
+            type="text"
+            placeholder="example@gmaill.com"
+            ng-model="email"
+        />
+        <input
+            type="password"
+            placeholder="*****"
+            class="form-control"
+            ng-model="password"
+        />
+        <input
+            type="text"
+            placeholder="07********"
+            class="form-control"
+            ng-model="phone"
+        />
+        <input
+            type="text"
+            placeholder="Amman"
+            class="form-control"
+            ng-model="location"
+        />
+    </div>
+    <input class="btn btn-primary" type="button" value="SignUp" ng-Click=onSignUp() />
+    <label id="error"ng-controller="signUpController">{{$ctrl.error}}</label>
+    <br />
+    <label class="form-check-label" htmlFor="login">
+        Already have an account?
+        <a
+           id="signin"
+            ng-Click="
+                $ctrl.closeModal('SignUp');
+              $ctrl.openModal('Login');"
+        >
+        login
+        </a>
+    </label>
+</form>
