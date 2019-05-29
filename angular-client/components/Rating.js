@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('rateController'['$scope',function($scope){
+.controller('rateController'['$scope',function($scope,$http){
   $scope.ratingText='';
   $scope.rate='';
   $scope.rateMessage='Thank you for your feedback!'
@@ -13,11 +13,11 @@ angular.module('app')
     }
     $http({
 			method:'post',
-			url:'/login',
+			url:'/rating',
 			data:JSON.stringify(body),
 		  headers: {'Content-Type': "application/json; charset = utf-8"}
 		}).then(function(response){
-            console.log('success')
+        console.log('success')
             
 		}).catch(function(){
 			console.log('big error')
