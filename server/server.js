@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 });
 
 app.use('', khsoosiRouter);
-app.use(express.static(__dirname + '/../client/dist'));
+app.use(express.static(__dirname + '/../angular-client'));
 
 app.listen(port, function() {
 	console.log('listening on port !', port);
