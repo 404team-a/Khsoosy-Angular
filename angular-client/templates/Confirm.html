@@ -1,0 +1,59 @@
+<div>
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Confirm</h3>
+        <table class="table table-hover table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Student Name</th>
+              <th scope="col">Day</th>
+              <th scope="col">Start Hour</th>
+              <th scope="col">End Hour</th>
+              <th scope="col">Confirmed</th>
+              <th scope="col">-</th>
+              <th scope="col">-</th>
+            </tr>
+          </thead>
+          <tbody>
+            <div ng-repeat="data in $scope.books">
+                <tr>
+                  <td>{{data.name}}</td>
+                  <td>{{data.day}}</td>
+                  <td>{{data.start}</td>
+                  <td>{{data.end}}</td>
+                  <td>{{data.confirmed}}</td>
+                  {{{data.confirmed}} === 'Yes' || {{data.confirmed}} === 'No' ? (
+                    ($scope.is_disabled = true)
+                  ) : (
+                    ($scope.is_disabled = false)
+                  )}
+                  <td>
+                    <button
+                      class="btn btn-primary"
+                      name={{data.id}}
+                      value="Yes"
+                      disabled=$scope.disabled
+                      ng-Click= 'answer($event)'
+                    >
+                      Accept
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      class="btn btn-primary"
+                      name={{data.id}}
+                      value="No"
+                      disabled=$scope.disabled
+                      ng-Click="answer($event)"
+                    >
+                      No
+                    </button>
+                  </td>
+                </tr>
+                </div>
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

@@ -77,5 +77,5 @@ angular.module('app')
  })
 .component('Profile' ,{
     controller : "ProfileCtrl",
-    templateUrl : "angular-client/templates/profile.html" 
+    templateUrl : "/templates/profile.html" 
 })

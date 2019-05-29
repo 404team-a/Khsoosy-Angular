@@ -20,8 +20,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("", khsoosiRouter);
-
+app.use('', khsoosiRouter);
 app.listen(port, function() {
   console.log("listening on port !", port);
 });
