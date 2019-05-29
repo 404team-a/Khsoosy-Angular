@@ -78,4 +78,4 @@ angular.module('app')
 .component('Profile' ,{
     controller : "ProfileCtrl",
     templateUrl : "angular-client/templates/profile.html" 
-})
+})	
