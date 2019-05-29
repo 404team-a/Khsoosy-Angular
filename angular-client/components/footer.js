@@ -1,5 +1,5 @@
 angular.module('app')
 
 .component('Footer' ,{
-    templateUrl : "angular-client/templates/footer.html" 
+    templateUrl : "/templates/footer.html" 
 })
