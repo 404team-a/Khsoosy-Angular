@@ -1,0 +1,66 @@
+<div>
+    <span className="form-group">
+        <label>User Name:</label>
+        <input
+            className="form-control"
+            type="text"
+            placeholder="user name"
+            ng-model="username"
+        />
+        <label>Email:</label>
+        <input
+            readOnly
+            className="form-control"
+            type="text"
+            placeholder="email"
+            ng-model="email"
+        />
+        <label>Phone Number:</label>
+        <input
+            className="form-control"
+            type="text"
+            placeholder="phone"
+            ng-model="phone"
+        />
+        <label>Location:</label>
+        <input
+            className="form-control"
+            type="text"
+            placeholder="location"
+            ng-model="location"
+        />
+        <label>Subject Level:</label>
+        <input
+            className="form-control"
+            type="text"
+            placeholder="subjectLevel"
+            ng-model="subjectLevel"
+        />
+        <label>Subject Name:</label>
+        <input
+            className="form-control"
+            type="text"
+            placeholder="subjectName"
+            ng-model="subjectName"
+        />
+        <label>Summary:</label>
+        <input
+            className="form-control"
+            type="text"
+            placeholder="summary"
+            ng-model="summary"
+        />
+        <label>Upload your image:</label>
+        <ImageUpload changeImg="$ctrl.changeImg" ng-model="imgUrl" />
+
+        <label>Upload your CV:</label>
+        <CVUpload changeCV="$ctrl.changeCV"/>
+        <Schedule changeSchedules="$ctrl.changeSchedules" schedules="$ctrl.schedules" />
+        <Confirm current_teacherId="$ctrl.current_teacherId" />
+        <button className="updateBtn" ng-click="$ctrl.updateInfo()">
+            Update
+        </button>
+
+        <label>{{$ctrl.updatedMsg}}</label>
+    </span>
+</div>
