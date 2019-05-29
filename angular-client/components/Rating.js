@@ -19,7 +19,8 @@ angular.module('app')
 		  headers: {'Content-Type': "application/json; charset = utf-8"}
 		}).then(function(response){
         console.log('success')
-            
+						
+				
 		}).catch(function(){
 			console.log('big error')
 		}).then({
