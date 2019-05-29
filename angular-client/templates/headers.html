@@ -1,0 +1,36 @@
+<div>
+    <div className="topnav">
+        <h1 id="title">KHSOOSI</h1>
+        <input className="signbtn" type="button" ng-click='$ctrl.openModal()' />
+        <input className="signbtn" type="button" ng-click='$ctrl.closeModal()' />
+    </div>
+    <img
+        id="img"
+        src="https://www.trentu.ca/english/sites/trentu.ca.english/files/styles/header_image/public/header_images/header_creative_writing2.jpg?itok=qqMcjzSZ"
+    />
+    <Modal
+        visible='$ctrl.SignUp'
+        width="600"
+        height="350"
+        effect="fadeInDown"
+        ng-click="$ctrl.closeModal()"
+    >
+        <div>
+            <SignUp
+            closeModal='$ctrl.closeModal()'
+            openModal='$ctrl.openModal'
+            />
+        </div>
+    </Modal>
+    <Modal
+        visible='$ctrl.Login'
+        width="400"
+        height="300"
+        effect="fadeInDown"
+        onClickAway='$ctrl.closeModal()'
+    >
+        <div>
+            <Login onLogin="$ctrl.onLogin" closeModal="$ctrl.closeModal"/>
+        </div>
+    </Modal>
+</div>
