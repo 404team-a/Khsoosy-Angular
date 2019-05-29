@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+const { db } = require('../database-mysql/db');
+const Sequelize = require('sequelize');
+const bcrypt = require('bcrypt');
+const SECRET_KEY = 'any string';
+const ejs = require('ejs');
+const Nexmo = require('nexmo');
+const socketio = require('socket.io');
+const { User, Schedule, Rating, Confirm, Subject } = require('../database-mysql/model');
+var jwt = require('jsonwebtoken');
+=======
 const { db } = require("./database/db");
 const Sequelize = require("sequelize");
 const bcrypt = require("bcrypt");
@@ -13,6 +24,7 @@ const {
   Subject
 } = require("./database/model");
 var jwt = require("jsonwebtoken");
+>>>>>>> d1852d77edad778c03f2d47ce8ace9ed604fd864
 const nexmo = new Nexmo(
   {
     apiKey: "b84db079",
@@ -41,6 +53,41 @@ exports.rating = (req, res) => {
 };
 
 exports.updateTeacherProfile = (req, res) => {
+<<<<<<< HEAD
+	User.update(
+		{
+			name: req.body.userName,
+			email: req.body.email,
+			phone: req.body.phone,
+			location: req.body.location,
+			summary: req.body.summary,
+			cvFile: req.body.cvFileUrl,
+			img: req.body.imgUrl
+		},
+		{ where: { id: req.body.current_teacherId } }
+	)
+		.then(() => {
+			Schedule.destroy({
+				where: {
+					userId: req.body.current_teacherId
+				}
+			});
+		})
+		.then(() => {
+			for (let i = 0; i < req.body.schedules.length; i++) {
+				Schedule.create({
+					day: req.body.schedules[i].day,
+					startHour: req.body.schedules[i].startHour,
+					endHour: req.body.schedules[i].endHour,
+					userId: req.body.current_teacherId
+				});
+			}
+		})
+		.then(function(data) {
+			res.json({ result: 'The information was successfully updated' });
+		})
+		.catch((err) => res.send("hi"))//res.status(500).json({ error: 'Server Error' }));
+=======
   User.update(
     {
       name: req.body.userName,
@@ -76,6 +123,7 @@ exports.updateTeacherProfile = (req, res) => {
         .json({ result: "The information was successfully updated" });
     })
     .catch(err => res.status(500).json({ error: "Server Error" }));
+>>>>>>> d1852d77edad778c03f2d47ce8ace9ed604fd864
 };
 
 exports.showTeacherInfo = (req, res) => {

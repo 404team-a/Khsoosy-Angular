@@ -1,6 +1,12 @@
+<<<<<<< HEAD:server/index.js
+const express = require('express');
+const bodyParser = require('body-parser');
+const db = require('../database-mysql/db');
+=======
 const express = require("express");
 const bodyParser = require("body-parser");
 const db = require("./database/db");
+>>>>>>> d1852d77edad778c03f2d47ce8ace9ed604fd864:server/server.js
 const app = express();
 const khsoosiRouter = require("./router");
 
