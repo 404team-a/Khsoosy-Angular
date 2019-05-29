@@ -44,7 +44,7 @@ angular.module('app')
 
 
 
-.component('Rating',{
+.component('rating',{
   bindings: {
     teacherId:'<',
     stdId:'<'

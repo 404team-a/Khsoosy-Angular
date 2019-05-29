@@ -38,7 +38,7 @@ angular.module('app')
   ///////////////////////////////
 }])
 
-.component('Confirm',{
+.component('confirm',{
   bindings: {
       closeModal:'<',
       openModal:'<'

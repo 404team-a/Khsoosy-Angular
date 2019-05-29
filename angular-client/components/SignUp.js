@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('rateController'['$scope',function($scope,$http){
+.controller('signUpController'['$scope',function($scope,$http){
   $scope.is_teacher='';
   $scope.userName="";
   $scope.email='';
@@ -48,12 +48,12 @@ angular.module('app')
   }
 }])
 
-.component('Rating',{
+.component('signUP',{
     bindings: {
         closeModal:'<',
         openModal:'<'
       },
       controller: 'signUpController',
-      templateUrl: '/templates/Rating.html'
+      templateUrl: '/templates/SignUp.html'
   
   })
