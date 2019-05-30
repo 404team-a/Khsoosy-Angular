@@ -1,10 +1,10 @@
-<div>
+<div ng-controller="LoginController">
   <form className="sign">
     <div className="form-group">
       <h1 id="login">login</h1>
       <label>Email address</label>
       <input
-        ng-modle="Email"
+        ng-modle="email"
         className="form-control"
         name="email"
         placeholder="example@gmail.com"
@@ -18,9 +18,10 @@
         placeholder="*******"
       />
     </div>
-    <input type="submit" className="btn btn-primary" />
-
+    <button ng-click="loging()" className="btn btn-primary">
+      Submit
+    </button>
     <label>{{ loginMessage }}</label>
-    <label id="error">{{ loginErrorMessage }}</label>
+    <label id="error">{{ loginError }}</label>
   </form>
 </div>
