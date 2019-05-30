@@ -1,8 +1,8 @@
 
 angular.module('app')
-.controller('searchCtrl',function($scope,$http){
+.controller('searchCtrl',($scope,$http) => {
 
-    $scope.search = function () {
+    $scope.search =  () => {
 
         const body = {
 			location: $scope.location,
@@ -34,7 +34,7 @@ angular.module('app')
 .component('search' ,{
     controller : "searchCtrl",
     templateUrl : "/templates/search.html" 
- })	
+ });
 
 
 // 	$scope.search();

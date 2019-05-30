@@ -1,4 +1,5 @@
-angular.module("app")
+angular
+  .module("app")
 
   .controller("ScheduleController", function($scope) {
     $scope.schedules = [];
@@ -14,7 +15,7 @@ angular.module("app")
         // console.log($scope.schedules);
       }
       $scope.showHide = function() {
-        $scope.isVisible = $scope.isVisible = true;
+        $scope.isVisible = true;
       };
       $scope.delete = function() {
         $scope.schedules.splice(this.$index, 1);
@@ -22,7 +23,7 @@ angular.module("app")
       };
       $scope.hide = function() {
         if ($scope.schedules.length === 0) {
-          $scope.isVisible = $scope.isVisible = false;
+          $scope.isVisible = false;
         }
       };
     };

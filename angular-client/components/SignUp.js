@@ -64,4 +64,4 @@ angular.module('app')
       controller: 'signUpController',
       templateUrl: '/templates/signUP.html'
   
-  })
+  });
