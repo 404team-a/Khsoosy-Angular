@@ -1,9 +1,9 @@
 angular.module('app')
 
-.controller('HeaderCtrl',function($scope,$http){
-    $scope.SignUp = false 
-    $scope.Login = false 
-
+.controller('HeaderCtrl',function($scope,$http,mdl){
+    $scope.SignUp = mdl.SignUp 
+    $scope.Login = mdl.Login 
+console.log("ashdjahsdjagsdjhgasj")
     $scope.openModal = () => {
         $scope.Login = true
     }
@@ -13,5 +13,10 @@ angular.module('app')
 })
 .component('header' ,{
     controller : "HeaderCtrl",
-    templateUrl : "angular-client/templates/header.html" 
+    templateUrl : "/templates/header.html" 
+})
+.service("mdl",function(){
+    var SignUp=false;
+    var Login=false;
+    
 })

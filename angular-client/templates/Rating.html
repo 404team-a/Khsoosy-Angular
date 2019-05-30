@@ -1,10 +1,7 @@
 
-<form class="sign">
-    <div class="form-group" ng-controller="rateController">
-    <h2>Give your teacher feedback :</h2>
-    <input
-      class="form-control"
-  <form className="sign" ng-controller="rateController">
+<form class="sign" ng-controller='rateController'>
+    <div class="form-group" >
+  <form className="sign" >
     <div className="form-group" >
     <h2>Give your teacher feedback :</h2>
     <input
@@ -24,5 +21,5 @@
     </div>
   
     <button className="btn btn-primary" ng-Click='rating()' >submit</button>
-    <label id="rateMessage" ng-controller='rateController'>{{rateMessage}}</label>
+    <label id="rateMessage" >{{rateMessage}}</label>
   </form>
