@@ -1,4 +1,6 @@
 
+angular.module('app')
+.controller('searchCtrl',function($scope,$http){
 
     $scope.search = function () {
 
@@ -8,7 +10,8 @@
 			level: $scope.level
 		};
 
-		return fetch('http://localhost:4000/search', {
+		return $http({
+            url:'http://localhost:4000/search',
 			method: 'post',
 			body: JSON.stringify(body),
 			headers: {
@@ -26,33 +29,40 @@
 			.catch((err) => console.log(err));
 
     };
+    
+})
+.component('search' ,{
+    controller : "searchCtrl",
+    templateUrl : "/templates/search.html" 
+ })	
 
-	$scope.search();
-import { app } from "firebase";
 
-// (function(angular) {
-//     angular.module('search', []).controller('searchCtrl', function searchCtrl($scope) {
-//         // functionality goes here !
-//         var searchBox =  $scope.searchBox
-//         this.fun=function (params) {
-//         }
-//     });
+// 	$scope.search();
+// import { app } from "firebase";
 
-//     angular.module('search', []).c
-// })(window.angular);
+// // (function(angular) {
+// //     angular.module('search', []).controller('searchCtrl', function searchCtrl($scope) {
+// //         // functionality goes here !
+// //         var searchBox =  $scope.searchBox
+// //         this.fun=function (params) {
+// //         }
+// //     });
 
-var subjectsName = angular.module('searchForm', []);
-var subjectLevel = angular.module("searchForm", []);
-var location = angular.module("searchBox", []);
+// //     angular.module('search', []).c
+// // })(window.angular);
 
-app.controller('searchCtrl', ($scope) => {
-    $scope.subjectsName 
-});
+// var subjectsName = angular.module('searchForm', []);
+// var subjectLevel = angular.module("searchForm", []);
+// var location = angular.module("searchBox", []);
 
-app.controller('searchCtrl', ($scope) => {
-    $scope.subjectLevel
-});
+// app.controller('searchCtrl', ($scope) => {
+//     $scope.subjectsName 
+// });
 
-app.controller('searchCtrl', ($scope) => {
-    $scope.location
-});
+// app.controller('searchCtrl', ($scope) => {
+//     $scope.subjectLevel
+// });
+
+// app.controller('searchCtrl', ($scope) => {
+//     $scope.location
+// });

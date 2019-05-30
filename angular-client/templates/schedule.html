@@ -1,53 +1,53 @@
 <div ng-controller="ScheduleController">
-  <div class="row" >
-    <div class="col-sm-6">
-      <form class="select form-group" ng-submit="add(); showHide()">
-        <label htmlFor="selectDate">Select day:</label>
-        <select
-          ng-model="rowArr[0]"
-          class="form-control"
-          id="selectDate"
-          name="day"
-        >
-          <option value="Sunday">Sunday</option>
-          <option value="Monday">Monday</option>
-          <option value="Tuesday">Tuesday</option>
-          <option value="Wedensday">Wedensday</option>
-          <option value="Thursday">Thursday</option>
-          <option value="Friday">Friday</option>
-          <option value="Saturday">Saturday</option>
-        </select>
-        <label htmlFor="selectStartHour">Select start hour:</label>
-        <input ng-model="rowArr[1]" />
-        <label htmlFor="selectEndHour">Select end hour:</label>
-        <input ng-model="rowArr[2]" />
-        <button id="addBtn">Add</button>
-      </form>
-    </div>
-    <div class="col-sm-6">
-        <div>
-          <span ng-show="isVisible">
-            <h3>Schedule</h3>
-            <table className="table table-hover table-dark">
-              <thead>
-                <tr>
-                  <th scope="col">Day</th>
-                  <th scope="col">Start</th>
-                  <th scope="col">End</th>
-                  <th scope="col">Cancel</th>
-                </tr>
-              </thead>
-              <tbody>
-                </span>
-              <tr ng-repeat="ele in schedules">
-                <td>{{ele[0]}}</td>
-                <td>{{ele[1]}}</td>
-                <td>{{ele[2]}}</td>
-                <td>
-                  <button ng-click="delete(); hide()">remove</button>
-                </td>                
-          </tr>
+    <div class="row" >
+      <div class="col-sm-6">
+        <form class="select form-group" ng-submit="add(); showHide()">
+          <label htmlFor="selectDate">Select day:</label>
+          <select
+            ng-model="rowArr[0]"
+            class="form-control"
+            id="selectDate"
+            name="day"
+          >
+            <option value="Sunday">Sunday</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wedensday">Wedensday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+          </select>
+          <label htmlFor="selectStartHour">Select start hour:</label>
+          <input ng-model="rowArr[1]" />
+          <label htmlFor="selectEndHour">Select end hour:</label>
+          <input ng-model="rowArr[2]" />
+          <button id="addBtn">Add</button>
+        </form>
+      </div>
+      <div class="col-sm-6">
+          <div>
+            <span ng-show="isVisible">
+              <h3>Schedule</h3>
+              <table className="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Day</th>
+                    <th scope="col">Start</th>
+                    <th scope="col">End</th>
+                    <th scope="col">Cancel</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  </span>
+                <tr ng-repeat="ele in schedules">
+                  <td>{{ele[0]}}</td>
+                  <td>{{ele[1]}}</td>
+                  <td>{{ele[2]}}</td>
+                  <td>
+                    <button ng-click="delete(); hide()">remove</button>
+                  </td>                
+            </tr>
+        </div>
       </div>
     </div>
   </div>
-</div>

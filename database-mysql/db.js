@@ -2,10 +2,10 @@
 const Sequelize = require("sequelize");
 
 //Database connection
-const db = new Sequelize('sql12293151', 'sql12293151', 'K9RaFkAPbr', {
-    host: 'sql2.freesqldatabase.com',
-    dialect: 'mysql',
-})
+const db = new Sequelize('userdb', 'root', 'rbk6', {
+    host: 'localhost',
+    dialect:'mysql'
+  });
 
 db.sync({ force: false, logging: false  }).then(() => {
     console.log(`Database & tables created!`)
