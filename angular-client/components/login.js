@@ -4,10 +4,13 @@ angular
   .controller("LoginController", function($scope) {
     $scope.email = "";
     $scope.password = "";
-    $scope.loginMessage = "Welcome to Khsoosi!";
-    $scope.loginErrorMessage = "Please Try Again";
+    $scope.current_teacherId = "";
+    $scope.current_studentId = "";
+    $scope.logInMessage = "Welcome to Khsoosi!";
+    $scope.errorLogin = "Please Try Again";
 
     $scope.sumbit = function() {};
+    $scope.loging = function() {};
   })
 
   .component("Login", {
