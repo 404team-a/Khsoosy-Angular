@@ -2,14 +2,10 @@ angular.module('app')
 
 .controller('ProfileCtrl',function($scope,$http){
    // $scope.cv=''
-   $scope.updatedmsg = "thanks a lote "
+   $scope.updatedmsg = ""
 
   console.log("okkkkkk")
-   $scope.componentDidMount = () => {
-       const id = $scope.current_teacherId;
-       $scope.current_teacherId = id
-       $scope.showTeacherInfo(id)
-   }
+ 
    $scope.showTeacherInfo = (id) => {
        return $http({
         url:`/teacherProfile/${id}`,
@@ -19,7 +15,7 @@ angular.module('app')
    			Accept: 'application/json'
    		}
    	})
-   		.then((response) => (response = response.json()))
+   		.then((response) => (response = response))
    		.then((data) => {
    			// console.log(data);
                
@@ -38,7 +34,15 @@ angular.module('app')
    		})
    		.catch((err) => console.log(err));
    }
+
+   $scope.componentDidMount = () => {
+	const id = $scope.current_teacherId;
+	$scope.current_teacherId = id
+	$scope.showTeacherInfo(id)
+}
+
    $scope.updateInfo = () => {
+	   $scope.updatedMsg="updated!"
     $scope.current_teacherId = 1234
    	console.log("update please",$scope.current_teacherId)
        const body = {

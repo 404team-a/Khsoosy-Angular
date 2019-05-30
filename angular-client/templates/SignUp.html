@@ -55,15 +55,15 @@
         />
     </div>
     <input class="btn btn-primary" type="button" value="SignUp" ng-Click=onSignUp() />
-    <label id="error"ng-controller="signUpController">{{$ctrl.error}}</label>
+    <label id="error"ng-controller="signUpController">{{error}}</label>
     <br />
     <label class="form-check-label" htmlFor="login">
         Already have an account?
         <a
            id="signin"
             ng-Click="
-                $ctrl.closeModal('SignUp');
-              $ctrl.openModal('Login');"
+                $scope.closeModal('signUp');
+              $scope.openModal('Login');"
         >
         login
         </a>

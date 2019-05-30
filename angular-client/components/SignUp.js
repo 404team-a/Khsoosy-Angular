@@ -1,5 +1,6 @@
 angular.module('app')
-.controller('signUpController'['$scope',function($scope,$http){
+
+.controller('signUpController',function($scope,$http,mdl){
   $scope.is_teacher='';
   $scope.userName="";
   $scope.email='';
@@ -9,16 +10,24 @@ angular.module('app')
   this.error='';
   $scope.userName="";
 
-  $scope.onSignUp=function(){
+  $scope.onSignUp=()=>{
+    console.log(this,'hi',$scope)
+    const body = { 
+      userName:$scope.userName,
+      is_teacher:$scope.is_teacher,
+      password:$scope.password,
+      email:$scope.email,
+      phone:$scope.phone,
+      location:$scope.location };
     $http({
       method:'post',
       url:'/signup',
       data:JSON.stringify(body),
       headers: {'Content-Type': "application/json; charset = utf-8"}
-    }).then(function(response){
-      return response.json();
+    }).then((response)=>{
+      return response;
         
-    }).then(function(body){
+    }).then((body)=>{
       if (body.error){
       
         $scope.error= body.error
@@ -38,20 +47,21 @@ angular.module('app')
         $scope.email= ''
         $scope.phone= ''
         $scope.location= ''
-        this.closeModal('SignUp');
-        this.openModal('Login');
       }
         
-    }).catch(function(){
-        console.log('big error')
+    }).catch((err)=>{
+        console.log(err)
     })
   }
-}]).component('signUP',{
-    bindings: {
-        closeModal:'<',
-        openModal:'<'
-      },
+})
+
+.component('signup',{
+  bindings:{
+    closeModal:'<',
+    openModal:'<'
+    
+  },
       controller: 'signUpController',
-      templateUrl: '/templates/SignUp.html'
+      templateUrl: '/templates/signUP.html'
   
   });

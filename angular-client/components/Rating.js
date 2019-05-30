@@ -1,11 +1,12 @@
 angular.module('app')
-.controller('rateController'['$scope',function($scope,$http){
+.controller('rateController',function($scope,$http,$timeout){
 
   $scope.ratingText='';
   $scope.rate='';
-  $scope.rateMessage='Thank you for your feedback!'
+  $scope.rateMessage=''
 
   $scope.rating=function(){
+    $scope.rateMessage='Thank you for your feedback!'
     var body = {
       rating :$scope.ratingText,
       tera:$scope.rate,
@@ -34,14 +35,15 @@ angular.module('app')
 			console.log('big error')
     })
     
-    setTimeout(() => {
+    $timeout(() => {
+      console.log('remove')
       $scope.ratingText='';
       $scope.rate='';
-      $scope.rateMessage=''
+      $scope.rateMessage='';
     }, 3000);
   }
 
-}])
+})
 
 
 
