@@ -10,7 +10,7 @@ angular.module('app')
         this.SignUp = true
     }
 })
-.component('Header' ,{
+.component('header' ,{
     controller : "HeaderCtrl",
     templateUrl : "angular-client/templates/headers.html" 
 })

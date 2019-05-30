@@ -8,7 +8,7 @@ angular.module('app')
   $scope.confirm=function(){
     return $http({
       method:'get',
-      url:'/conform?teacherId=${this.current_teacherId}`',
+      url:'/conform?teacherId=${$scope.current_teacherId}`',
       headers: {'Content-Type': "application/json; charset = utf-8"}
     }).then(function(result){
       result = result.json()
@@ -38,7 +38,7 @@ angular.module('app')
   ///////////////////////////////
 }])
 
-.component('Confirm',{
+.component('confirm',{
   bindings: {
       closeModal:'<',
       openModal:'<'
