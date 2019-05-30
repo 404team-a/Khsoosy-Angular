@@ -1,5 +1,6 @@
 angular.module('app')
-.controller('signUpController'['$scope',function($scope,$http){
+
+.controller('signUpController',function($scope,$http){
   $scope.is_teacher='';
   $scope.userName="";
   $scope.email='';
@@ -38,7 +39,7 @@ angular.module('app')
         $scope.email= ''
         $scope.phone= ''
         $scope.location= ''
-        this.closeModal('SignUp');
+        this.closeModal('signUP');
         this.openModal('Login');
       }
         
@@ -46,14 +47,10 @@ angular.module('app')
         console.log('big error')
     })
   }
-}])
+})
 
 .component('signUP',{
-    bindings: {
-        closeModal:'<',
-        openModal:'<'
-      },
       controller: 'signUpController',
-      templateUrl: '/templates/SignUp.html'
+      templateUrl: '/templates/signUP.html'
   
   })
