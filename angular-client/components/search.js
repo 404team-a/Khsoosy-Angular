@@ -1,6 +1,6 @@
 
 angular.module('app')
-.controller('searchCtrl',function($scope,$http){
+.controller('searchCtrl',($scope,$http) => {
 
     $scope.search = function () {
 
