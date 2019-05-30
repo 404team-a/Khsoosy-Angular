@@ -12,7 +12,7 @@ angular.module('app')
    }
    $scope.showTeacherInfo = (id) => {
        return $http({
-           url:`/teacherProfile/${id}`,
+        url:`/teacherProfile/${id}`,
    		method: 'GET',
    		headers: {
    			'Content-Type': 'application/json',
