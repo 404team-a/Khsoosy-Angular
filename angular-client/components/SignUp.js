@@ -46,9 +46,7 @@ angular.module('app')
         console.log('big error')
     })
   }
-}])
-
-.component('signUP',{
+}]).component('signUP',{
     bindings: {
         closeModal:'<',
         openModal:'<'
@@ -56,4 +54,4 @@ angular.module('app')
       controller: 'signUpController',
       templateUrl: '/templates/SignUp.html'
   
-  })
+  });
