@@ -8,10 +8,10 @@ angular.module('app')
   $scope.rating=function(){
     $scope.rateMessage='Thank you for your feedback!'
     var body = {
-      rating :$scope.ratingText,
-      tera:$scope.rate,
-      teacherId:this.teachrId,
-      stdId:this.stdId
+      ratingText:$scope.ratingText,
+      rate:$scope.rate,
+      studentId:this.stdId,
+      teacherId:this.teachrId
     }
     $http({
 			method:'post',
