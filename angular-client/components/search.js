@@ -29,6 +29,7 @@ angular.module('app')
 			.catch((err) => console.log(err));
 
     };
+    
 })
 .component('search' ,{
     controller : "searchCtrl",
