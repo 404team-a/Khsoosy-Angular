@@ -1,0 +1,39 @@
+<div ng-controller="ImageUploadController">
+    <div className="input-group mb-3">
+      <div className="input-group-prepend">
+        <button
+          ng-click="imgUpload(); showImg() showProgress()"
+          type="button"
+          id="inputGroupFileAddon01"
+        >
+          Upload
+        </button>
+      </div>
+      <div className="custom-file">
+        <input
+          ng-show="appearImg"
+          ng-model="imgUrl"
+          className="custom-file-input"
+          id="inputGroupFile01"
+          aria-describedby="inputGroupFileAddon01"
+          type="file"
+          accept="image/*"
+          data-max-size="5000"
+        />
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-sm-4">
+        <img
+          src="http://i.imgur.com/HQ3YU7n.gif"
+          alt="uploaded images"
+          height="100"
+          width="100"
+        />
+      </div>
+      <div className="col-sm-4">
+        <progress ng-modle="value" max="100" />
+      </div>
+      <div className="col-sm-4" />
+    </div>
+  </div>

@@ -3,6 +3,7 @@ angular
 
   .controller("LoginController", function($scope, $http) {
     $scope = {
+      is_teacher: false,
       email: "",
       password: "",
       current_teacherId: "",
@@ -37,15 +38,15 @@ angular
           localStorage.setItem("token", data.token);
           localStorage.setItem("user_id", data.user_id);
 
-          errorLogin = "";
-          password = "";
-          email = "";
-          loginMessage = "Welcome to Khsoosi!";
-          user_id = data.user_id;
-          is_teacher = data.is_teacher;
+          $scope.errorLogin = "";
+          $scope.password = "";
+          $scope.email = "";
+          $scope.loginMessage = "Welcome to Khsoosi!";
+          $scope.user_id = data.user_id;
+          $scope.is_teacher = data.is_teacher;
 
           let obj = {
-            is_teacher: this.state.is_teacher,
+            is_teacher: $scope.is_teacher,
             current_teacherId: $scope.current_teacherId,
             current_studentId: $scope.current_studentId
           };
@@ -62,7 +63,7 @@ angular
     };
   })
 
-  .component("Login", {
+  .component("login", {
     controller: "LoginController",
     templateUrl: "/templates/login.html"
   });
