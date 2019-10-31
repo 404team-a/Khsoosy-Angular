@@ -37,7 +37,7 @@
     "nodemon": "^1.19.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "sequelize": "^5.8.6",
+    "sequelize": "^5.15.1",
     "socket.io": "^2.2.0",
     "underscore": "^1.9.1"
   }
