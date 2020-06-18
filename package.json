@@ -17,7 +17,7 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
-    "angular": "^1.6.3",
+    "angular": "^1.8.0",
     "angular-animate": "^1.7.8",
     "angular-touch": "^1.7.8",
     "angular-ui-bootstrap": "^2.5.6",
